@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="This page contains work in progress studying the controllability of discrete-time bilinear systems.">
-  <title>Controllability of bilinear discrete systems</title>
+  <meta name="description" content="Controllability of continuous-time bilinear systems is undecidable. The set of controllable discrete-time bilinear plants is nonsemialgebraic.">
+  <title>Controllability of bilinear systems</title>
   <style>
     body {
       max-width: 760px;
@@ -16,20 +16,51 @@
       color: #202020;
       background: #fff;
     }
-    h1, h2 { line-height: 1.3; }
+    h1, h2, h3 { line-height: 1.3; }
     h1 { font-size: 1.8rem; }
     h2 { margin-top: 2rem; font-size: 1.3rem; }
-    .equation { text-align: center; font-size: 1.2em; margin: 1.5rem 0; }
+    h3 { margin-top: 1.5rem; font-size: 1.12rem; }
+    .equation { text-align: center; font-size: 1.2em; margin: 1.5rem 0; overflow-x: auto; }
     a { color: #0645ad; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Controllability of bilinear discrete systems</h1>
+    <h1>Controllability of bilinear systems</h1>
 
-    <p>This page contains work in progress studying the controllability of discrete-time bilinear systems.</p>
+    <p>This page contains work in progress studying the controllability of bilinear systems.</p>
 
-    <h2>What is a discrete-time bilinear system?</h2>
+    <p><strong>Main results:</strong> Controllability of continuous-time bilinear systems is undecidable.</p>
+    <p>The set of controllable discrete-time bilinear plants is nonsemialgebraic.</p>
+
+    <h2>Continuous-time</h2>
+
+    <h3>What is a continuous-time bilinear system?</h3>
+
+    <div class="equation">
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mover accent="true"><mi>x</mi><mo>˙</mo></mover><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
+        <mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo>
+        <munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover>
+        <msub><mi>u</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
+        <msub><mi>B</mi><mi>i</mi></msub>
+        <mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
+      </math>
+    </div>
+
+    <p>where <i>A</i>, <i>B</i><sub>1</sub>, …, <i>B</i><sub>m</sub> ∈ ℝ<sup>n×n</sup>, <i>x</i>(<i>t</i>) ∈ ℝ<sup>n</sup>, and <i>u</i><sub>i</sub>(<i>t</i>) ∈ ℝ.</p>
+
+    <p>The system is globally controllable if every nonzero initial state can be steered exactly to every nonzero target state in finite time using unrestricted controls.</p>
+
+    <h3>Current results</h3>
+
+    <p>We prove the impossibility of a general algorithm capable of determining, given rational matrices <i>A</i>, <i>B</i><sub>1</sub>, …, <i>B</i><sub>m</sub>, whether the system is globally controllable.</p>
+
+    <p><a href="https://github.com/Brunoly/continuous-time-bilinear-controllability-is-undecidable">Proof of undecidability of continuous-time bilinear controllability (GitHub)</a></p>
+
+    <h2>Discrete-time</h2>
+
+    <h3>What is a discrete-time bilinear system?</h3>
 
     <p class="equation"><i>x</i><sub>k+1</sub> = (<i>A</i> + <i>u</i><sub>k</sub> <i>B</i>)<i>x</i><sub>k</sub></p>
 
@@ -39,15 +70,15 @@
 
     <p>A plant is controllable if every nonzero state in ℝ<sup>2</sup> can be steered to every nonzero target state in a positive finite number of steps.</p>
 
-    <h2>Current results</h2>
+    <h3>Current results</h3>
 
     <p>Using GPT Astra, we found that for discrete-time bilinear systems in dimension 2, there is no fixed finite combination of polynomial equalities and inequalities in the entries of <i>A</i>,<i>B</i> that can exactly characterize controllability. In other words, the set of controllable pairs is nonsemialgebraic.</p>
 
-    <p><a href="https://github.com/Brunoly/bilinear-controllability-is-not-semialgebraic">GitHub with a proof and Lean 4 formalization</a></p>
+    <p><a href="https://github.com/Brunoly/bilinear-controllability-is-not-semialgebraic">Proof of nonsemialgebraicity of discrete-time bilinear controllability (GitHub)</a></p>
 
     <h2>In progress</h2>
 
-    <p>Full article explaining the problem and proof (hopefully in a more human-readable way).</p>
+    <p>Full article explaining both problems and proofs (hopefully in a more human-readable way).</p>
   </main>
 </body>
 </html>
