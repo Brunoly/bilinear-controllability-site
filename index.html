@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Controllability of continuous-time bilinear systems is undecidable. The set of controllable discrete-time bilinear plants is nonsemialgebraic.">
-  <title>Controllability of bilinear systems</title>
+  <title>Controllability of bilinear systems is undecidable</title>
+  <meta name="author" content="Brunoly">
+  <link rel="canonical" href="https://brunoly.github.io/bilinear-controllability-site/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Controllability of bilinear systems is undecidable">
+  <meta property="og:description" content="Controllability of continuous-time bilinear systems is undecidable. The set of controllable discrete-time bilinear plants is nonsemialgebraic.">
+  <meta property="og:url" content="https://brunoly.github.io/bilinear-controllability-site/">
   <style>
     body {
       max-width: 760px;
@@ -21,24 +27,28 @@
     h2 { margin-top: 2rem; font-size: 1.3rem; }
     h3 { margin-top: 1.5rem; font-size: 1.12rem; }
     .equation { text-align: center; font-size: 1.2em; margin: 1.5rem 0; overflow-x: auto; }
+    .meta { color: #555; font-size: 0.9em; }
     a { color: #0645ad; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Controllability of bilinear systems</h1>
+    <article>
+    <h1>Controllability of bilinear systems is undecidable</h1>
 
-    <p>This page contains work in progress studying the controllability of bilinear systems.</p>
+    <p>This page contains work in progress studying the controllability of bilinear systems, an open problem in control theory.</p>
 
     <p><strong>Main results:</strong> Controllability of continuous-time bilinear systems is undecidable.</p>
     <p>The set of controllable discrete-time bilinear plants is nonsemialgebraic.</p>
 
-    <h2>Continuous-time</h2>
+    <p class="meta">Last updated November 19, 2026.</p>
+
+    <h2>Continuous-time bilinear systems</h2>
 
     <h3>What is a continuous-time bilinear system?</h3>
 
     <div class="equation">
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" alttext="x'(t) = (A + sum_{i=1}^{m} u_i(t) B_i) x(t)">
         <mover accent="true"><mi>x</mi><mo>˙</mo></mover><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
         <mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo>
         <munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover>
@@ -52,13 +62,13 @@
 
     <p>The system is globally controllable if every nonzero initial state can be steered exactly to every nonzero target state in finite time using unrestricted controls.</p>
 
-    <h3>Current results</h3>
+    <h3>Is controllability of continuous-time bilinear systems decidable?</h3>
 
-    <p>We prove the impossibility of a general algorithm capable of determining, given rational matrices <i>A</i>, <i>B</i><sub>1</sub>, …, <i>B</i><sub>m</sub>, whether the system is globally controllable.</p>
+    <p>No. Using GPT Astra, we prove the impossibility of a general algorithm capable of determining, given rational matrices <i>A</i>, <i>B</i><sub>1</sub>, …, <i>B</i><sub>m</sub>, whether the system is globally controllable.</p>
 
     <p><a href="https://github.com/Brunoly/continuous-time-bilinear-controllability-is-undecidable">Proof of undecidability of continuous-time bilinear controllability (GitHub)</a></p>
 
-    <h2>Discrete-time</h2>
+    <h2>Discrete-time bilinear systems</h2>
 
     <h3>What is a discrete-time bilinear system?</h3>
 
@@ -70,15 +80,18 @@
 
     <p>A plant is controllable if every nonzero state in ℝ<sup>2</sup> can be steered to every nonzero target state in a positive finite number of steps.</p>
 
-    <h3>Current results</h3>
+    <h3>Is the set of controllable discrete-time bilinear systems semialgebraic?</h3>
 
     <p>Using GPT Astra, we found that for discrete-time bilinear systems in dimension 2, there is no fixed finite combination of polynomial equalities and inequalities in the entries of <i>A</i>,<i>B</i> that can exactly characterize controllability. In other words, the set of controllable pairs is nonsemialgebraic.</p>
 
     <p><a href="https://github.com/Brunoly/bilinear-controllability-is-not-semialgebraic">Proof of nonsemialgebraicity of discrete-time bilinear controllability (GitHub)</a></p>
 
+    <p class="meta">Keywords: bilinear systems, homogeneous bilinear systems, bilinear control systems, controllability, global controllability, decidability, undecidability, semialgebraic sets, control theory, controllability criterion, characterization of controllability, open problems in control theory.</p>
+
     <h2>In progress</h2>
 
     <p>Full article explaining both problems and proofs (hopefully in a more human-readable way).</p>
+    </article>
   </main>
 </body>
 </html>
